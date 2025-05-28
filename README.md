@@ -20,17 +20,21 @@
 
 
 
-### Files Overview:
+### Components Overview:
 
-1. **`tspii.py`**: This is the main entry point for the project. It handles document input, pseudonymization execution, and saving the pseudonymized document to a file.
-   
-2. **`pseudonymizer.py`**: Contains the core class `CustomPseudonymizer`, which performs the pseudonymization process and stores the depseudonymization mappings. It integrates with custom recognizers and synthetic data generators.
+1. **`tspii.py`**: This file is the main entry point for the project. It handles document input, pseudonymization execution, and saving the pseudonymized document to a file. You can customize the (de)pseudonymization of your documents by using the `ReversibleAnonymizer` class.
 
-3. **`recognizers.py`**: Defines custom recognizers to detect specific PII entities in travel-related documents (e.g., PNR, e-tickets, IATA/ICAO codes).
+2. **`reversible_anonymizers`**: This directory contains the `ReversibleAnonymizer` core class, that can be used to perform reversible pseudonymization. This class provides methods to (de)anonymize documents, and offers options for customization.
 
-4. **`generators.py`**: Implements custom fake data generators that create realistic synthetic data for aviation-related entities (e.g., generating fake PNRs or e-tickets).
+3. **`recognizers`**: Defines custom recognizers to detect specific PII entities in travel-related documents (e.g., PNR, e-tickets, IATA/ICAO codes).
 
-5. tests: Contains unit tests for the CustomPseudonymizer class, validating the accuracy of the pseudonymization process and ensuring that sensitive information is properly anonymized while maintaining a correct mapping for potential deanonymization.
+4. **`operators`**: Defines custom operators that will determine the new value of anonymized sentitive data. It implements custom fake data generators that create realistic synthetic data for aviation-related entities (e.g., generating fake PNRs or e-tickets).
+
+5. **`anonymizers`**: Defines a custom method that define the process to anonymize sensitive data.
+
+6. **`deanonymizers`**: Defines a custom method that define the process to deanonymize sensitive data. 
+
+5. **`tests`**: Contains unit tests for the CustomPseudonymizer class, validating the accuracy of the pseudonymization process and ensuring that sensitive information is properly anonymized while maintaining a correct mapping for potential deanonymization.
 
 ## Usage
 
